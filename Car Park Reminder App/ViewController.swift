@@ -18,11 +18,9 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
     @IBOutlet weak var askRemindingLabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var button: UIButton!
-    @IBOutlet weak var confirmationLabel: UILabel!
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var myView: UIView!
-    @IBOutlet weak var myImage: UIImageView!
+    @IBOutlet weak var imageView: UIImageView!
     let timePicker = UIDatePicker()
     let reminderTimePicker = UIDatePicker()
     
@@ -37,8 +35,8 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         askRemindingLabel.isHidden = true
         datePicker.isHidden = true
         button.isHidden = true
-        confirmationLabel.isHidden = true
         resetButton.isHidden = true
+        imageView.isHidden = true
         createTimePicker()
         
     }
@@ -50,6 +48,15 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         createResetAlert()
     }
     
+    func createAlert(titleText: String, messageText: String)  {
+        let alert = UIAlertController(title: titleText, message: messageText, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     func createResetAlert()  {
         let cancelAlert = UIAlertController(title: "Are You Sure?", message: "Tapping Yes Will Stop This Notification From Happening ( If It's Not Already Happened ) And Reset The Form. This Will Allow You To Create A New Notication For A Different Time.", preferredStyle: .alert)
         cancelAlert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
@@ -59,11 +66,9 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
             self.askRemindingLabel.isHidden = true
             self.datePicker.isHidden = true
             self.button.isHidden = true
-            self.confirmationLabel.isHidden = true
             self.resetButton.isHidden = true
             self.timeTextField.text = ""
-            self.myImage.isHidden = false
-            self.myView.isHidden = false
+            self.imageView.isHidden = true
             UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
             UIApplication.shared.applicationIconBadgeNumber = 0
             
@@ -91,12 +96,10 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
             self.timeTextField.isEnabled = false
             self.timeTextField.alpha = 0.5
             self.askRemindingLabel.alpha = 0.5
-            self.confirmationLabel.isHidden = false
             self.resetButton.isHidden = false
             self.datePicker.isEnabled = false
             self.button.isEnabled = false
             self.button.alpha = 0
-            self.confirmationLabel.text = "Your Reminder Has Been Set! Select 'Reset  Notification' Below If You Wish To Cancel The Notification.\nWhen You've Received Your Notification, Select 'Reset Notification' Again To Set Up A New Reminder. :) "
             
             let content = UNMutableNotificationContent()
             content.title = "Reminder"
@@ -110,6 +113,8 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
             let notificationReq = UNNotificationRequest(identifier: "identifier", content: content, trigger: trigger)
             UNUserNotificationCenter.current().add(notificationReq, withCompletionHandler: nil)
             UNUserNotificationCenter.current().delegate = self // foreground notification
+            
+            self.createAlert(titleText: "Your Reminder Has Been Set! :)", messageText: "Tap 'Cancel / Create New' Below If You Wish To Cancel The Notification.\nWhen You've Received Your Notification, Tap 'Cancel / Create New' Again When You're Ready To Set Up A New Reminder. :)")
         }))
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { action in
@@ -152,9 +157,6 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         // create time in string format
         let timeString = timeFormatter.string(from: timePicker.date)
         
-        myView.isHidden = true
-        myImage.isHidden = true
-        
         let bounds = askRemindingLabel.bounds
         
         UIView.animate(withDuration: 1, delay: 1, usingSpringWithDamping: 0.2, initialSpringVelocity: 300, options: .curveEaseInOut, animations: {
@@ -179,6 +181,7 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         button.isHidden = false
         button.isEnabled = true
         button.alpha = 1
+        self.imageView.isHidden = false
     }
 }
 
