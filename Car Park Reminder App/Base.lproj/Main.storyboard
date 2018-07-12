@@ -61,7 +61,7 @@
                                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What Time Would You Like Reminding At?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7Y-zQ-asc">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="What Time Would You Like Reminding At?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7Y-zQ-asc">
                                                 <rect key="frame" x="16" y="199" width="288" height="42"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -69,7 +69,7 @@
                                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
-                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="CkJ-Wx-idv">
+                                            <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="CkJ-Wx-idv">
                                                 <rect key="frame" x="0.0" y="249" width="320" height="162"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="320" id="3DP-Jn-Jar"/>
@@ -79,7 +79,7 @@
                                                     <!--2018-07-12 09:23:47 +0000-->
                                                 </date>
                                             </datePicker>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mf2-jv-Xuj">
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mf2-jv-Xuj">
                                                 <rect key="frame" x="16" y="427" width="288" height="42"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
@@ -91,7 +91,7 @@
                                                     <action selector="confirmButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZiB-Kj-Zj8"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2K8-lc-ewQ">
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2K8-lc-ewQ">
                                                 <rect key="frame" x="16" y="477" width="288" height="36"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
@@ -104,10 +104,25 @@
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Parking_Alarm" translatesAutoresizingMaskIntoConstraints="NO" id="45v-bP-ir8">
-                                                <rect key="frame" x="70" y="533" width="180" height="180"/>
+                                                <rect key="frame" x="70" y="527" width="180" height="180"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="180" id="FOb-7T-0Cr"/>
                                                     <constraint firstAttribute="width" constant="180" id="VNN-aG-eMb"/>
+                                                </constraints>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E16-jc-LVx" userLabel="Over View">
+                                                <rect key="frame" x="16" y="187" width="288" height="348"/>
+                                                <color key="backgroundColor" red="0.41568627450000001" green="0.74509803919999995" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="348" id="A0s-ih-lkP"/>
+                                                    <constraint firstAttribute="width" constant="288" id="rLf-Kh-taO"/>
+                                                </constraints>
+                                            </view>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Parking_Alarm" translatesAutoresizingMaskIntoConstraints="NO" id="7Mc-V6-WMh">
+                                                <rect key="frame" x="40" y="209" width="240" height="288"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="240" id="6Ry-kc-Nlh"/>
+                                                    <constraint firstAttribute="height" constant="288" id="SR3-ux-fPD"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
@@ -120,8 +135,11 @@
                                             <constraint firstAttribute="trailing" secondItem="pRM-R6-2MA" secondAttribute="trailing" constant="16" id="AA9-7J-nAe"/>
                                             <constraint firstItem="mf2-jv-Xuj" firstAttribute="leading" secondItem="Uov-C4-rwX" secondAttribute="leading" constant="16" id="DpR-rW-8K7"/>
                                             <constraint firstAttribute="trailing" secondItem="mf2-jv-Xuj" secondAttribute="trailing" constant="16" id="EOC-jJ-22s"/>
+                                            <constraint firstItem="7Mc-V6-WMh" firstAttribute="leading" secondItem="Uov-C4-rwX" secondAttribute="leading" constant="40" id="FUi-1I-2q1"/>
+                                            <constraint firstItem="E16-jc-LVx" firstAttribute="top" secondItem="pRM-R6-2MA" secondAttribute="bottom" constant="91" id="FxG-6t-YhU"/>
                                             <constraint firstItem="CkJ-Wx-idv" firstAttribute="top" secondItem="p7Y-zQ-asc" secondAttribute="bottom" constant="8" id="ILJ-cJ-FtG"/>
                                             <constraint firstItem="vdl-jD-NNY" firstAttribute="top" secondItem="jtx-7P-Dbo" secondAttribute="bottom" constant="742" id="KFq-TR-kHR"/>
+                                            <constraint firstItem="7Mc-V6-WMh" firstAttribute="top" secondItem="e3D-ak-5YQ" secondAttribute="bottom" constant="30" id="RBO-kv-zyz"/>
                                             <constraint firstItem="45v-bP-ir8" firstAttribute="top" secondItem="2K8-lc-ewQ" secondAttribute="bottom" constant="20" id="SXo-39-1f8"/>
                                             <constraint firstItem="jtx-7P-Dbo" firstAttribute="top" secondItem="Uov-C4-rwX" secondAttribute="top" constant="28" id="T6p-DK-T2J"/>
                                             <constraint firstAttribute="trailing" secondItem="2K8-lc-ewQ" secondAttribute="trailing" constant="16" id="UqW-ca-5u1"/>
@@ -133,11 +151,14 @@
                                             <constraint firstItem="2K8-lc-ewQ" firstAttribute="leading" secondItem="Uov-C4-rwX" secondAttribute="leading" constant="16" id="iwi-yv-dv9"/>
                                             <constraint firstItem="h87-Ql-bfy" firstAttribute="centerX" secondItem="Uov-C4-rwX" secondAttribute="centerX" id="jT2-sz-5fC"/>
                                             <constraint firstItem="jtx-7P-Dbo" firstAttribute="centerX" secondItem="Uov-C4-rwX" secondAttribute="centerX" id="l0P-mF-QXL"/>
+                                            <constraint firstAttribute="trailing" secondItem="7Mc-V6-WMh" secondAttribute="trailing" constant="40" id="lTy-Gi-reH"/>
+                                            <constraint firstItem="45v-bP-ir8" firstAttribute="top" secondItem="7Mc-V6-WMh" secondAttribute="bottom" constant="30" id="ljg-iA-dty"/>
                                             <constraint firstItem="45v-bP-ir8" firstAttribute="centerX" secondItem="Uov-C4-rwX" secondAttribute="centerX" id="mbZ-TI-gBZ"/>
                                             <constraint firstItem="p7Y-zQ-asc" firstAttribute="top" secondItem="e3D-ak-5YQ" secondAttribute="bottom" constant="20" id="o3u-5m-8DC"/>
                                             <constraint firstItem="p7Y-zQ-asc" firstAttribute="leading" secondItem="Uov-C4-rwX" secondAttribute="leading" constant="16" id="qAZ-1F-ZNF"/>
                                             <constraint firstAttribute="trailing" secondItem="CkJ-Wx-idv" secondAttribute="trailing" id="qyb-dh-5CG"/>
                                             <constraint firstItem="2K8-lc-ewQ" firstAttribute="top" secondItem="mf2-jv-Xuj" secondAttribute="bottom" constant="8" id="sRC-dF-kel"/>
+                                            <constraint firstItem="E16-jc-LVx" firstAttribute="centerX" secondItem="Uov-C4-rwX" secondAttribute="centerX" id="tiA-2R-JEr"/>
                                             <constraint firstItem="e3D-ak-5YQ" firstAttribute="leading" secondItem="Uov-C4-rwX" secondAttribute="leading" constant="16" id="yQy-2C-Apk"/>
                                             <constraint firstItem="h87-Ql-bfy" firstAttribute="top" secondItem="pRM-R6-2MA" secondAttribute="bottom" constant="10" id="zFx-aK-PGy"/>
                                         </constraints>
@@ -169,6 +190,8 @@
                         <outlet property="button" destination="mf2-jv-Xuj" id="7iq-rB-XLE"/>
                         <outlet property="datePicker" destination="CkJ-Wx-idv" id="6fa-6o-WMV"/>
                         <outlet property="imageView" destination="45v-bP-ir8" id="zy6-jh-GfP"/>
+                        <outlet property="myImage" destination="7Mc-V6-WMh" id="3Qy-p3-dl4"/>
+                        <outlet property="myView" destination="E16-jc-LVx" id="Ri4-sp-dOC"/>
                         <outlet property="resetButton" destination="2K8-lc-ewQ" id="3jN-nA-S72"/>
                         <outlet property="scrollView" destination="M9a-Kk-7EW" id="2Rh-a0-12p"/>
                         <outlet property="timeLabel" destination="e3D-ak-5YQ" id="yaB-vW-9IF"/>

@@ -21,6 +21,8 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var myView: UIView!
+    @IBOutlet weak var myImage: UIImageView!
     let timePicker = UIDatePicker()
     let reminderTimePicker = UIDatePicker()
     
@@ -69,6 +71,8 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
             self.resetButton.isHidden = true
             self.timeTextField.text = ""
             self.imageView.isHidden = true
+            self.myView.isHidden = false
+            self.myImage.isHidden = false
             UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
             UIApplication.shared.applicationIconBadgeNumber = 0
             
@@ -181,7 +185,10 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         button.isHidden = false
         button.isEnabled = true
         button.alpha = 1
-        self.imageView.isHidden = false
+        imageView.isHidden = false
+        myView.isHidden = true
+        myImage.isHidden = true
+        
     }
 }
 
