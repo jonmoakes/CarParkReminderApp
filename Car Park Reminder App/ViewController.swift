@@ -52,7 +52,7 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
     }
     
     func createResetAlert()  {
-        let cancelAlert = UIAlertController(title: "Are You Sure?", message: "Tapping Yes Will Will Stop This Notification From Happening ( If Not Already Happened ) And Reset The Form. This Will Allow You To Create A New Notication For A Different Time", preferredStyle: .alert)
+        let cancelAlert = UIAlertController(title: "Are You Sure?", message: "Tapping Yes Will Stop This Notification From Happening ( If It's Not Already Happened ) And Reset The Form. This Will Allow You To Create A New Notication For A Different Time.", preferredStyle: .alert)
         cancelAlert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
             self.timeTextField.isEnabled = true
             self.timeTextField.alpha = 1
@@ -87,7 +87,7 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
     }
     
     func createMethodAlert()  {
-        let alert = UIAlertController(title: "Are You Sure This Is What Time You'd Like To Be Reminded?", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Are You Sure This Is The Time You'd Like To Be Reminded At?", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
             
             self.timeTextField.isEnabled = false
@@ -153,6 +153,19 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         
         myView.isHidden = true
         myImage.isHidden = true
+        
+        let bounds = askRemindingLabel.bounds
+        
+        UIView.animate(withDuration: 1, delay: 1, usingSpringWithDamping: 0.2, initialSpringVelocity: 300, options: .curveEaseInOut, animations: {
+            self.askRemindingLabel.bounds = CGRect(x: bounds.origin.x, y: bounds.origin.y, width: bounds.size.width + 10, height: bounds.size.height)
+        }) { (success:Bool) in }
+        
+        let pickerBounds = datePicker.bounds
+        
+        UIView.animate(withDuration: 1, delay: 2, usingSpringWithDamping: 0.2, initialSpringVelocity: 300, options: .curveEaseInOut, animations: {
+            self.datePicker.bounds = CGRect(x: bounds.origin.x, y: bounds.origin.y, width: bounds.size.width + 10, height: pickerBounds.size.height)
+        }) { (success:Bool) in }
+        
         timeTextField.text = "\(timeString)"
         timeLabel.text = "Your Ticket Expires At \(timeString)"
         self.view.endEditing(true)
