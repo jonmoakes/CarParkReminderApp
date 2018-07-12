@@ -12,6 +12,7 @@
 		AE4C73E620F74F7200156158 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE4C73E420F74F7200156158 /* Main.storyboard */; };
 		AE4C73E820F74F7400156158 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE4C73E720F74F7400156158 /* Assets.xcassets */; };
 		AE4C73EB20F74F7400156158 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE4C73E920F74F7400156158 /* LaunchScreen.storyboard */; };
+		AE4C73FA20F7818F00156158 /* alarm_beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE4C73F920F7818F00156158 /* alarm_beep.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		AE4C73E720F74F7400156158 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE4C73EA20F74F7400156158 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE4C73EC20F74F7400156158 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE4C73F920F7818F00156158 /* alarm_beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarm_beep.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +60,19 @@
 				AE4C73E220F74F7200156158 /* ViewController.swift */,
 				AE4C73E420F74F7200156158 /* Main.storyboard */,
 				AE4C73E720F74F7400156158 /* Assets.xcassets */,
+				AE4C73F420F76FCA00156158 /* Sounds */,
 				AE4C73E920F74F7400156158 /* LaunchScreen.storyboard */,
 				AE4C73EC20F74F7400156158 /* Info.plist */,
 			);
 			path = "Car Park Reminder App";
+			sourceTree = "<group>";
+		};
+		AE4C73F420F76FCA00156158 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				AE4C73F920F7818F00156158 /* alarm_beep.wav */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,6 +135,7 @@
 			files = (
 				AE4C73EB20F74F7400156158 /* LaunchScreen.storyboard in Resources */,
 				AE4C73E820F74F7400156158 /* Assets.xcassets in Resources */,
+				AE4C73FA20F7818F00156158 /* alarm_beep.wav in Resources */,
 				AE4C73E620F74F7200156158 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,7 +302,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jonathanoakes.Car-Park-Reminder-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -308,7 +320,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jonathanoakes.Car-Park-Reminder-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
