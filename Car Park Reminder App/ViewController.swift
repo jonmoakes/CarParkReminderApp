@@ -20,7 +20,6 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var confirmationLabel: UILabel!
     @IBOutlet weak var resetButton: UIButton!
-    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var myView: UIView!
     @IBOutlet weak var myImage: UIImageView!
@@ -40,8 +39,8 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         button.isHidden = true
         confirmationLabel.isHidden = true
         resetButton.isHidden = true
-        imageView.isHidden = true
         createTimePicker()
+        
     }
     
     @IBAction func confirmButtonPressed(_ sender: UIButton) {
@@ -62,7 +61,6 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
             self.button.isHidden = true
             self.confirmationLabel.isHidden = true
             self.resetButton.isHidden = true
-            self.imageView.isHidden = true
             self.timeTextField.text = ""
             self.myImage.isHidden = false
             self.myView.isHidden = false
@@ -94,8 +92,11 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
             self.timeTextField.alpha = 0.5
             self.askRemindingLabel.alpha = 0.5
             self.confirmationLabel.isHidden = false
-            self.imageView.isHidden = false
             self.resetButton.isHidden = false
+            self.datePicker.isEnabled = false
+            self.button.isEnabled = false
+            self.button.alpha = 0
+            self.confirmationLabel.text = "Your Reminder Has Been Set! Select 'Reset  Notification' Below If You Wish To Cancel The Notification.\nWhen You've Received Your Notification, Select 'Reset Notification' Again To Set Up A New Reminder. :) "
             
             let content = UNMutableNotificationContent()
             content.title = "Reminder"
@@ -109,15 +110,15 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
             let notificationReq = UNNotificationRequest(identifier: "identifier", content: content, trigger: trigger)
             UNUserNotificationCenter.current().add(notificationReq, withCompletionHandler: nil)
             UNUserNotificationCenter.current().delegate = self // foreground notification
-            
-            self.datePicker.isEnabled = false
-            self.datePicker.alpha = 0.9
-            self.button.isEnabled = false
-            self.button.alpha = 0
         }))
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { action in
             self.dismiss(animated: true, completion: nil)
+            
+            self.timeTextField.isEnabled =  true
+            self.timeTextField.alpha = 1
+            self.askRemindingLabel.alpha = 1
+            self.datePicker.isEnabled = true
         }))
         self.present(alert, animated: true)
     }
