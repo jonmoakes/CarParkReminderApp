@@ -118,7 +118,7 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
             UNUserNotificationCenter.current().add(notificationReq, withCompletionHandler: nil)
             UNUserNotificationCenter.current().delegate = self // foreground notification
             
-            self.createAlert(titleText: "Your Reminder Has Been Set! :)", messageText: "Tap 'Cancel / Create New' Below If You Wish To Cancel The Notification.\nWhen You've Received Your Notification, Tap 'Cancel / Create New' Again When You're Ready To Set Up A New Reminder. :)")
+            self.createAlert(titleText: "Your Reminder Has Been Set! :)", messageText: "Tap The 'Cancel / Create New' Button If You Wish To Cancel The Notification.\n\nWhen You've Received Your Notification, Tap 'Cancel / Create New' Again When You're Ready To Set Up A New Reminder. :)")
         }))
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { action in
