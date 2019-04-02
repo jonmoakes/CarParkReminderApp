@@ -107,6 +107,7 @@
 				TargetAttributes = {
 					AE4C73DC20F74F7200156158 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -295,13 +296,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PK84HMGTL3;
 				INFOPLIST_FILE = "Car Park Reminder App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jonathanoakes.Car-Park-Reminder-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -313,13 +315,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PK84HMGTL3;
 				INFOPLIST_FILE = "Car Park Reminder App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jonathanoakes.Car-Park-Reminder-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

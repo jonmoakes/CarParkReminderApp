@@ -109,7 +109,7 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
             content.title = "Reminder"
             content.subtitle = "Your Parking Ticket Is Due For Expiry Soon!"
             content.body = "You Asked Me To Remind You At This Time :)"
-            content.sound = UNNotificationSound(named: "alarm_beep.wav")
+            content.sound = UNNotificationSound(named: convertToUNNotificationSoundName("alarm_beep.wav"))
             content.badge = 1
             
             let dateComponent = self.datePicker.calendar.dateComponents([.hour, .minute], from: self.datePicker.date)
@@ -188,9 +188,13 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         imageView.isHidden = false
         myView.isHidden = true
         myImage.isHidden = true
-        
     }
 }
 
 
 
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUNNotificationSoundName(_ input: String) -> UNNotificationSoundName {
+	return UNNotificationSoundName(rawValue: input)
+}
