@@ -13,6 +13,7 @@
 		AE4C73E820F74F7400156158 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE4C73E720F74F7400156158 /* Assets.xcassets */; };
 		AE4C73EB20F74F7400156158 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE4C73E920F74F7400156158 /* LaunchScreen.storyboard */; };
 		AE4C73FA20F7818F00156158 /* alarm_beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE4C73F920F7818F00156158 /* alarm_beep.wav */; };
+		AE4D92272266662E002E715B /* parkingReminderSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE4D92262266662E002E715B /* parkingReminderSound.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		AE4C73EA20F74F7400156158 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE4C73EC20F74F7400156158 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE4C73F920F7818F00156158 /* alarm_beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarm_beep.wav; sourceTree = "<group>"; };
+		AE4D92262266662E002E715B /* parkingReminderSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = parkingReminderSound.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				AE4C73F920F7818F00156158 /* alarm_beep.wav */,
+				AE4D92262266662E002E715B /* parkingReminderSound.wav */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -134,6 +137,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE4D92272266662E002E715B /* parkingReminderSound.wav in Resources */,
 				AE4C73EB20F74F7400156158 /* LaunchScreen.storyboard in Resources */,
 				AE4C73E820F74F7400156158 /* Assets.xcassets in Resources */,
 				AE4C73FA20F7818F00156158 /* alarm_beep.wav in Resources */,

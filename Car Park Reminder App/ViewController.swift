@@ -109,11 +109,12 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
             content.title = "Reminder"
             content.subtitle = "Your Parking Ticket Is Due For Expiry Soon!"
             content.body = "You Asked Me To Remind You At This Time :)"
-            content.sound = UNNotificationSound(named: convertToUNNotificationSoundName("alarm_beep.wav"))
+            content.sound = UNNotificationSound(named: convertToUNNotificationSoundName("parkingReminderSound.wav"))
             content.badge = 1
             
             let dateComponent = self.datePicker.calendar.dateComponents([.hour, .minute], from: self.datePicker.date)
             let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: false)
+            
             let notificationReq = UNNotificationRequest(identifier: "identifier", content: content, trigger: trigger)
             UNUserNotificationCenter.current().add(notificationReq, withCompletionHandler: nil)
             UNUserNotificationCenter.current().delegate = self // foreground notification
